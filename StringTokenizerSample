@@ -1,0 +1,45 @@
+//How do I use StringTokenizer to split a string?
+//Category: java.util
+
+import java.util.StringTokenizer;
+
+public class StringTokenizerSample
+{
+    public static void main(String[] args)
+    {
+        StringTokenizer st =
+                new StringTokenizer("a stringtokenizer sample");
+
+        // get how many tokens inside st object
+        System.out.println("tokens count: " + st.countTokens());
+
+        // iterate st object to get more tokens from it
+        while (st.hasMoreElements())
+        {
+            String token = st.nextElement().toString();
+            System.out.println("token = " + token);
+        }
+
+        // split a date string using a forward slash as
+        // delimiter
+        st = new StringTokenizer("2005/12/15", "/");
+        while (st.hasMoreElements())
+        {
+            String token = st.nextToken();
+            System.out.println("token = " + token);
+        }
+    }
+}
+/**
+The above code is an example of using StringTokenizer to split a string. In the current JDK this class is discourageg to be used, using instead the String.split(...) method or using a new java.util.regex package.
+
+Here is the result of this sample code:
+
+tokens count: 3
+token = a
+token = stringtokenizer
+token = sample
+token = 2005
+token = 12
+token = 15
+*/
